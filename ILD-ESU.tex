@@ -57,15 +57,15 @@
 
 \begin{document}
 
-\preprint{APS/123-QED}
+\preprint{ILD}
 
 \title{The ILD detector at the ILC}% Force line breaks with \\
 \thanks{A footnote to the article title}%
 
-\author{The ILD Executive Board}
+\author{The ILD Concept Group}
  \altaffiliation[Also at ]{Physics Department, XYZ University.}%Lines break automatically or can be forced with \\
-\author{Second Author}%
- \email{Second.Author@institution.edu}
+%\author{Second Author}%
+% \email{Second.Author@institution.edu}
 \affiliation{%
  Authors' institution and/or address\\
  This line break forced with \textbackslash\textbackslash
@@ -73,8 +73,8 @@
 
 \collaboration{ILD Collaboration}%\noaffiliation
 
-\author{Charlie Author}
- \homepage{http://www.Second.institution.edu/~Charlie.Author}
+\author{ILD author list}
+ \homepage{http://www.ilcild.org}
 \affiliation{
  Second institution and/or address\\
  This line break forced% with \\
@@ -88,22 +88,16 @@
  This line break forced with \textbackslash\textbackslash
 }%
 
-\collaboration{CLEO Collaboration}%\noaffiliation
+\collaboration{ILD Collaboration}%\noaffiliation
 
 \date{\today}% It is always \today, today,
              %  but any date may be explicitly specified
 
 \begin{abstract}
-An article usually includes an abstract, a concise summary of the work
-covered at length in the main body of the article. 
+The international large detector, ILD, is a detector concept which has been developed for the electron positron collider ILC. The detector has been optimised for precision physics in a range of energies between 90 ~\GeV and 1~\TeV. ILD features a high precision, large volume combined silicon and gaseous tracking system, combined with a high granularity calorimeter all inside a solenoidal magnetic field. As a guiding principle in the design the concept of particle flow has been at the center of teh deliberations. In this document, the concept of the detector concept, the proposed implementation and the readiness of the different technologies needed for the implementation are discussed. The discussion takes place in the context of the ILC collider proposal, now under consideration in Japan, and includes site specific aspects needed to build and operate the detector at the proposed ILC site in Japan. 
 \begin{description}
-\item[Usage]
-Secondary publications and information retrieval purposes.
 \item[PACS numbers]
 May be entered using the \verb+\pacs{#1}+ command.
-\item[Structure]
-You may use the \texttt{description} environment to structure your abstract;
-use the optional argument of the \verb+\item+ command to give the category of each item. 
 \end{description}
 \end{abstract}
 
@@ -116,6 +110,118 @@ use the optional argument of the \verb+\item+ command to give the category of ea
 %\tableofcontents
 
 \section{\label{sec:level1}Introduction}
+
+\section{History of the ILD detector concept}
+The ILD detector concept group was formed in 2007, as a merger from two earlier detector concepts for electron positron collider, GLD and TESLA. GLS was a concept for the Asian Linear Collider, TESLA for the TESLA linear collider concept. Both concepts were similar in that they relied on a combination of silicon and gaseous tracking, combined with precision calorimetry, though in detail the solutions were rather different. Folling the agreement by the international community to continue with only one linear collider concept, the ILC, the two concepts also joined forces. During 2007 and 2008, an intense effort tool place to re-define the new detector base don the work done in the two previous concept groups. 
+
+At about the same time particle flow as a novel concept to reconstruct complex events at a collider has become more generally accepted - though a convincing experimental proof was still missing at this time. ILD decided nevertheless to adopt particle flow as the central guiding principle for its detector concept, and developed the ILD design around this assumption. 
+
+In parallel to the development of the ILC accelerator design ILD as a concept was worked out. It underwent a number of international review exercises, and was eventually validated as one of two ILC detector concept groups. With the delivery of the ILD technical design report in 2014, ILD re-organised its structure, to respond to the increasing likeliness that ILC as a project woudl be realised in Japan, and started a new re-optimisation process to react to new technical developments, and to the quest for reducing the cost of the overall project. 
+
+\section{The ILD detector design: requirements}
+The science which will be done at the ILC has been summarised in a separate document \cite{ILC-ESU1}. It is strongly dominated by the quest for ultimate precision in measurements of the properties of key particles like the Higgs boson, the weak gauge bosons, and, once the center of mass energy is beyond the production threshold, the top quark. 
+
+The anticipated precision physics program drives the requirements for the detector, essentially from two somewhat diferent sides. Many final states which will be analysed are fully hadronic final states, with a large number of jets. Thus an excellent reconstruction of jets is essentiell, which basically translates into an excellent jet energy resolution. Mamny studies for example looking at the reconstruction of W and Z bosons suggest that a jet energy resolution around 3\% is needed to fully exploit the power of the collider. Such a resolution requires an improvement of performance for example comared to the LHC detectors Atlas or CMS of nearly a factor of two. The concept of particle flow is currently believed to be the only approach which can reach this level of precision. Particle flow requires the reconstruction of charged and neutral particles with excellent efficiency, over a large solide angle, though at moderate individual resolution. Thus a tracker with outstanding efficiency is needed, combined with a calorimeter capabale of reconstruction neutral particles with high efficiency. For ILD the choice has been made to combine a large volume gaseous tracking system - which promises excellent efficiency combined with low mass - and a highly granular calorimeter both in the electromagnet and the hadronic section. To ease the linkage between the tracker and the calorimeter both tracker and calorimeter should be inside the coil. 
+
+In contrast to this a number of highly relevant channels require the precise reconstruction of exclusive final states, for example, containing heavu flavour final states. This requires in addition very precise reconstructino of the decay vertices of long lived particles, and thus implies a high resolution trakcing system close to the interaction region. The show-case reaction of the recoil HZ analysis requires in a similar way high precision tracking, to be able to reconstruct the two-muon decay of the Z boson, against which the higgs recoils, with excellent precision. This then adds excellent momentum reconstruction precision to the list of requirements. 
+
+The quantitative performance requirements which are used by the ILD collaboration in defining ILD are summarised in table~
+\ref{ild:tab:barrelpara}} and \ref{ild:tab:endcappara}.
+
+The main parameters of the ILD detector are summarised in Table~\ref{ild:tab:barrelpara} and table~\ref{ild:tab:endcappara}.
+%\begin{sidewaystable}[thb]
+\begin{table}\hspace*{-0cm}\small
+%\begin{tabular}{|l|p{0.8cm}p{0.8cm}p{1.0cm}|p{2.5cm}p{3.0cm}p{3.0cm}|}
+%\begin{tabular}{|l|p{0.06\textwidth}p{0.06\textwidth}p{0.07\textwidth}|p{0.25\textwidth}p{0.20\textwidth}p{0.20\textwidth}|}
+\begin{tabular}{ l p{0.05\hsize}p{0.04\hsize}p{0.04\hsize} p{0.20\hsize}p{0.20\hsize}p{0.20\hsize} }
+%\hline
+\toprule
+\multicolumn{7}{l}{{\bf Barrel system}}\\
+%\hline
+\midrule
+System & R(in) & R(out) & z & \multicolumn{3}{l}{comments}\\
+       & \multicolumn{3}{c}{[mm]}   &&&\\
+%\hline
+\midrule
+VTX    & 16         & 60        & 125 & 3 double layers &  Silicon pixel sensors, & \\
+       &            &           &           & layer 1: & layer 2: & layer 3-6 \\
+       &            &           &           & $\sigma<3 \mu m$ & $\sigma < 6 \mu m$ & $\sigma < 4 \mu m$ \\
+Silicon &           &           & &&&\\
+- SIT   & 153       & 300       & 644   & 2 silicon strip layers & $\sigma = 7 \mu m$& \\
+- SET   & 1811      &           & 2300   & 2 silicon strip layers & $\sigma = 7 \mu m$& \\
+- TPC   & 330       & 1808      & 2350   & MPGD readout & $1 \times 6 $mm$^2$ pads & $\sigma=60 \mu m$ at zero drift \\
+%\hline
+\midrule
+ECAL    & 1843      & 2028      & 2350   & W absorber  & SiECAL & 30 Silicon sensor layers, $5 \times 5$ mm$^2$ cells \\
+        &           &           &        &             & ScECAL & 30 Scintillator layers,  $ 5\times 45$ mm$^2$ strips \\
+HCAL    & 2058      & 3410      & 2350   & Fe absorber & AHCAL & 48 Scintillator layers, $3 \times 3$cm$^2$ cells, analogue \\
+        &           &           &         &            & SDHCAL & 48 Gas RPC layers, $1\times 1$ cm$^2$ cells, semi-digital\\
+%\hline
+\midrule
+Coil    & 3440      & 4400      & 3950    & 3.5 T field & $ 2 \lambda $& \\
+Muon    & 4450      & 7755      & 2800    & 14 scintillator layers& &\\
+%\hline
+\bottomrule
+\end{tabular}
+\caption{\label{ild:tab:barrelpara}List of the main parameters of the ILD detector for the barrel part.}
+\end{table}
+
+%\begin{table}\hspace*{-2.5cm}\small
+%\begin{tabular}{|l|p{0.8cm}p{0.8cm}p{1.0cm}|p{2.7cm}p{3.7cm}p{3.7cm}|}
+
+\begin{table}\hspace*{-0cm}\small
+%\begin{tabular}{|l|p{0.8cm}p{0.8cm}p{1.0cm}|p{2.5cm}p{3.0cm}p{3.0cm}|}
+\begin{tabular}{ l p{0.05\hsize}p{0.04\hsize}p{0.04\hsize} p{0.20\hsize}p{0.20\hsize}p{0.20\hsize} }
+
+%\hline
+\toprule
+\multicolumn{7}{ l }{{\bf End cap system}}\\
+\midrule
+System & z(min) & z(max) & r(min), r(max) & \multicolumn{3}{l}{comments}\\
+       & \multicolumn{3}{c}{[mm]}   &&&\\
+\midrule
+
+FTD    & 220     & 371    &      & 2 pixel disks & $\sigma=2-6 \mu m$ &\\
+       &         &        &      & 5 strip disks & $\sigma = 7 \mu m$& \\
+ETD    & 2420    & 2445   & 419-1822 & 2 silicon strip layers & $\sigma=7 \mu m$ & \\
+\midrule
+ECAL   & 2450    & 2635   &      & W-absorber & SiECAL & Si readout layers \\
+       &         &        &      &            & ScECAL & Scintillator layers \\
+HCAL   & 2650    & 3937   & 335-3190& Fe absorber & AHCAL & 48 Scintillator layers $3 \times 3 $cm$^2$ cells, analogue\\
+       &         &        &      &              & SDHCAL & 48 gas RPC layers $1\times 1$cm$^2$ cells, semi-digital \\
+BeamCal & 3595   & 3715   & 20-150  & W absorber& 30 GaAs readout layers & \\
+Lumical & 2500   & 2634   & 76-280 & W absorber & 30 Silicon layers & \\
+LHCAL   & 2680   & 3205   & 93-331 & W absorber &&\\
+\midrule
+Muon    & 2560   &        & 300-7755 & 12 scintillator layers&&\\
+\bottomrule
+\end{tabular}
+\caption{\label{ild:tab:endcappara}List of the main parameters of the ILD detector for the end cap part.}
+
+\end{table}
+
+
+\section{Implementation of the ILD detector}
+
+\subsection{Vertexing system}
+
+\subsection{Tracking System}
+
+\subsection{Calorimeter System}
+
+\subsection{The Forward System}
+
+\subsection{The muon system}
+
+\subsection{Detector Integration}
+
+\section{Science with ILD}
+
+\section{Integration of ILD into the ILC accelerator}
+
+\section{The ILD Collaboration}
+
+\section{Conclusion and Outlook}
 
 
 \end{document}
