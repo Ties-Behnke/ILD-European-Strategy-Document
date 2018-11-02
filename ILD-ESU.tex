@@ -19,7 +19,8 @@
 %  4)  latex apssamp.tex
 %
 \documentclass[%
- reprint,
+%reprint for two column 
+ preprint,
 %superscriptaddress,
 %groupedaddress,
 %unsortedaddress,
@@ -107,23 +108,25 @@ May be entered using the \verb+\pacs{#1}+ command.
                               %display desired
 \maketitle
 
-%\tableofcontents
+\tableofcontents
 
 \section{\label{sec:level1}Introduction}
 
 \section{History of the ILD detector concept}
-The ILD detector concept group was formed in 2007, as a merger from two earlier detector concepts for electron positron collider, GLD and TESLA. GLS was a concept for the Asian Linear Collider, TESLA for the TESLA linear collider concept. Both concepts were similar in that they relied on a combination of silicon and gaseous tracking, combined with precision calorimetry, though in detail the solutions were rather different. Folling the agreement by the international community to continue with only one linear collider concept, the ILC, the two concepts also joined forces. During 2007 and 2008, an intense effort tool place to re-define the new detector base don the work done in the two previous concept groups. 
+The ILD detector concept group was formed in 2007, as a merger from two earlier detector concepts for electron positron colliders, GLD and TESLA. GLD was a concept for the Asian Linear Collider, TESLA for the TESLA linear collider proposal. Both detector concepts were similar in that they relied on a combination of silicon and gaseous tracking, combined with precision calorimetry, though in detail the solutions were rather different. Following the agreement by the international community to continue with only one linear collider concept, the ILC, the two concepts joined forces. During 2007 and 2008, an intense effort tool place to re-define the new detector based on the work done in the two previous concept groups. 
 
-At about the same time particle flow as a novel concept to reconstruct complex events at a collider has become more generally accepted - though a convincing experimental proof was still missing at this time. ILD decided nevertheless to adopt particle flow as the central guiding principle for its detector concept, and developed the ILD design around this assumption. 
+At about the same time particle flow as a novel concept to reconstruct complex events at a collider had become more generally accepted - though a convincing experimental proof was still missing at this time. ILD decided nevertheless to adopt particle flow as the central guiding principle for its detector concept, and developed the ILD design around this assumption. 
 
-In parallel to the development of the ILC accelerator design ILD as a concept was worked out. It underwent a number of international review exercises, and was eventually validated as one of two ILC detector concept groups. With the delivery of the ILD technical design report in 2014, ILD re-organised its structure, to respond to the increasing likeliness that ILC as a project woudl be realised in Japan, and started a new re-optimisation process to react to new technical developments, and to the quest for reducing the cost of the overall project. 
+The ILD concept underwent a number of international review exercises, and was eventually validated as one of two ILC detector concept groups. With the delivery of the ILD technical design report in 2014, ILD re-organised its structure, to respond to the increasing likeliness that ILC as a project would be realised in Japan, and started a re-optimisation process to react to new technical developments, and to the quest for reducing the cost of the overall project. 
 
 \section{The ILD detector design: requirements}
 The science which will be done at the ILC has been summarised in a separate document \cite{ILC-ESU1}. It is strongly dominated by the quest for ultimate precision in measurements of the properties of key particles like the Higgs boson, the weak gauge bosons, and, once the center of mass energy is beyond the production threshold, the top quark. 
 
-The anticipated precision physics program drives the requirements for the detector, essentially from two somewhat diferent sides. Many final states which will be analysed are fully hadronic final states, with a large number of jets. Thus an excellent reconstruction of jets is essentiell, which basically translates into an excellent jet energy resolution. Mamny studies for example looking at the reconstruction of W and Z bosons suggest that a jet energy resolution around 3\% is needed to fully exploit the power of the collider. Such a resolution requires an improvement of performance for example comared to the LHC detectors Atlas or CMS of nearly a factor of two. The concept of particle flow is currently believed to be the only approach which can reach this level of precision. Particle flow requires the reconstruction of charged and neutral particles with excellent efficiency, over a large solide angle, though at moderate individual resolution. Thus a tracker with outstanding efficiency is needed, combined with a calorimeter capabale of reconstruction neutral particles with high efficiency. For ILD the choice has been made to combine a large volume gaseous tracking system - which promises excellent efficiency combined with low mass - and a highly granular calorimeter both in the electromagnet and the hadronic section. To ease the linkage between the tracker and the calorimeter both tracker and calorimeter should be inside the coil. 
+The anticipated precision physics program drives the requirements for the detector, essentially from two somewhat different assumptions. Many final states which will be analysed are fully hadronic final states, with a large number of jets. Thus an excellent reconstruction of jets is essentiell, which basically translates into an excellent jet energy resolution. Many studies for example looking at the reconstruction of W and Z bosons suggest that a jet energy resolution around 3\% is needed to fully exploit the power of the collider. Such a resolution requires an improvement of performance for example compared to the LHC detectors Atlas or CMS of nearly a factor of two. The concept of particle flow is currently believed to be the only approach which can reach this level of precision. Particle flow requires the reconstruction of charged and neutral particles with excellent efficiency, over a large solid angle, though at moderate individual resolution. Thus a tracker with outstanding efficiency is needed, combined with a calorimeter capabale of reconstruction neutral particles with high efficiency. For ILD the choice has been made to combine a large volume gaseous tracking system - which promises excellent efficiency combined with low mass - and a highly granular calorimeter both in the electromagnet and the hadronic section. To ease the linkage between the tracker and the calorimeter both tracker and calorimeter should be inside the coil. 
 
-In contrast to this a number of highly relevant channels require the precise reconstruction of exclusive final states, for example, containing heavu flavour final states. This requires in addition very precise reconstructino of the decay vertices of long lived particles, and thus implies a high resolution trakcing system close to the interaction region. The show-case reaction of the recoil HZ analysis requires in a similar way high precision tracking, to be able to reconstruct the two-muon decay of the Z boson, against which the higgs recoils, with excellent precision. This then adds excellent momentum reconstruction precision to the list of requirements. 
+In contrast to this a number of highly relevant channels require the precise reconstruction of exclusive final states, for example, containing heavy flavour final states. This requires in addition very precise reconstruction of the decay vertices of long lived particles, and thus implies a high resolution vertexing system close to the interaction region. 
+
+In a similar way the show-case reaction of the recoil HZ analysis requires high precision tracking, to be able to reconstruct the two-muon decay of the Z boson, against which the higgs recoils, with excellent precision. This adds excellent momentum reconstruction precision to the list of requirements. 
 
 The quantitative performance requirements which are used by the ILD collaboration in defining ILD are summarised in table~
 \ref{ild:tab:barrelpara}} and \ref{ild:tab:endcappara}.
@@ -200,16 +203,57 @@ Muon    & 2560   &        & 300-7755 & 12 scintillator layers&&\\
 
 \end{table}
 
+In addition to the pure escience driven performance numbers the detector will have to be able to operate in the ILC environment. Due to the extreme focussing of the two beams in the interaction region, so-called beamstrahlung is generated, which produces significant background in the detector. The magnetic field focusses the majority of the charged component of the beamstrahlungs background into the forward region, but some fraction will still hit sensitive detector parts. This is particularly true for the innermost vertex detector layers, 
+
 
 \section{Implementation of the ILD detector}
+The ambitious requirements of the ILC detectors sparked a world-wide R\&D program to develop and demonstarte the different technologies needed. The R\&D was mostly coordinated and executed within so-called R\&D collaborations, which concentrated on particular technologies and sub-detector systems. These collaborations operated outside of the detector concept groups, and, in many cases, served several detector concept groups, sometimes even at more than one collider proposals. 
 
+The ILC concept group from its beginning has collaborated very closely with these R\&D groups, and has organised the needed R\&D work through and with the R\&D collaborations. 
+
+The ILD concept from its conception has been open to new technologies. In many cases no final decision on the technology has been taken at this time, but several options are maintained. This approach In the current implemnetation ILD differentiates between options and alternatives. For a particular technology to be accepted as an option, it has to demonstrate a certain maturity, has demonstrated key performance parameters through test beam experiments, and has developed a concept which adresses the main questions of integrating the technology into a subdetector for ILD. Technologies which are less mature can still be considered alternatives, meaning technologies which offer a promise for improved performance and/ or lower cost, where some experimental evidence exists that this technology will eventually become a feasible option, but where the final validation is still missing. 
+
+The ILD detector is a multi-purpose detector in which the different requirements are addressed by a combination of different sub-detector systems. The optimization for ultimate precision in the reconstruction of charged and neutral particles required that all major systems are contained within a strong solenoidal magnetic field. This field allows the measurement of the momentum of charged particles and removes low-energy background from the main part of the detector. Ultimate precision also requires that as little dead mateiral as possible is introduced into the detector system, which pushes in particular the coil to the outside of the tracking and calorimeter system. 
+
+ 
 \subsection{Vertexing system}
+The system closest to the interaction region is a pixel detector designed to reconstruct decay vertices of short lived particles with great precision. ILD has chosen a system consisting of three double layers of pixel detectors. The innermost layers is only half as long as the other ones, to reduce the number of background hits this layer is exposed to. In each double layer silicon sensors with different functionality are combined: one, which will provide excellent spatial resolution, with a pixel size of XX, one with a pixel size about 4 times larger, but with significantly better timing capabilities. The systems are designed such that they can be completely read out within 4 ILC bunch crossings, which again will be essential to reduce the occupancy due to background hits. 
+
+Over the last 10 years the MAPS technology has matured to a point where all the requirements needed for an ILC detector can be met. The technology has seen a first large scale use in the STAR vertex detector, and, more recently, in the upgrade of the ALICE vertex detector. To minimize the material in the system the sensors are routinely thinned to 50 $\mu$ m. very light weight support structures have been developed, which allow the goal of a radiation length per layer of around $0.1 \%$ to be in reach. 
+
+Other technologies which are under investigation for the ILC detector are the depfet technology, which is currently being deployed in the BELLE II vertex detector, the fine pitch CCD technology, and even less far developed concepts like SOI or Cronopix systems. 
+
+The anticipated performance of the vertex detector is shown in figure~\ref{fig-VTXperformance}.  
 
 \subsection{Tracking System}
 
+Tracking of charged particles is a key requirement for the ILD detector. ILD has decided to approach the problem with a hybrid solution, which combines a high resolution timeprojection chamber with a few layers of stretgically placed high resolution strip or pixel detectors. 
+
+The time projection chamber will fill a large volume of about 4.6\~m length and spanning radii from 33 to 180\~cm. In this volume the TPC provides in the barrel 220 three dimensional points, with a resolution of better than $100 \mu m$ in $r \phi$, and about 1 \~mm in z. This large number of points allows a reconstruction of the charged particle component of the event with large accuracy, including the reconstruction of secondaries, long lived particles, kinks etc.. In figure~\ref{fig:TPCeff} the simulated track finding efficiency in the TPC in high multiplicity $t \bar t$ events is shown. At the same time the complete TPC system will introduce only about 10\% of a radiation length into the detector. 
+
+On the inside and on the outside of the TPC a few layers of Silicon detector provide additional high resolution points, which, once combined with the TPC track, will result in a momentum resolution of $2 \times 10^{-5}$ for the complete system. Since the dead material in the system is very low, a significantly better resolution at low momenta can be achieved than it is possible with a Silicon only tracker. This is illustrated in figure~\ref{fig:momentumvsp}, where the ILD resolution is compared to the resolution in an ILD-like detector with Silicon only tracking, based on the optimization of the CLIC detector concept group. 
+
+The time projection chamber allows an identification of the particle type through the measurement of the specific energy loss, dE/dx, for tracks at intermediate momenta. The achievable resolution is shown in figure~\ref{fig:TPCdedx}. If the inner and/ or oute rsilicon layers can provide a timing of the particle at the level of 100 ps, the particle identification through dE/dx can be supplemented by time of flight measurements, which are particularly effective in the momentum regime which is the worst for dE/dx. This is shown by the second curve in figure~\fig{fig:TPCdedx}. 
+
+The performance of the time projection chamber has been the subject of intense R\&D over the last 15 years. Several technologies for the readout of the TPC have been sucessfully developed, and have demonstrated the needed performance in test beam experiments. A large volume field cage has been built, tp demonstrate the low mass technology needed to meet the 10\% goal discussed above. Most recently the performance of the specific energy loss, dE/dx, has been validated in test beam data. Based on these results, the TPC technology is mature for use in the ILD detector, and can deliver the needed performance. 
+
+
 \subsection{Calorimeter System}
+At the core of each particle flow detector is a very powerful calorimeter system. Particle flow stresses the capabilities of separating the individual particles in a jet, both charged and neutral. This puts the imaging capabilities at a premium, and pushes the calorimeter development in the direction of very high granularity of the system. A particularly challenging part is the precise reconstruction of the neutral hadronic component in the shower. A highly granular sampling calorimeter for the hadronic part is the asnwer by ILD on this challenge. The technological and conceptual development of the particle flow calorimeter have been largely done by the CALICE collabortion. 
+
+ILD has chosen a smapling calorimeter readout with silicon diodes as one option for the electromagnetic calorimeter. Diodes with pads of about $5 \times 5$ mm$^2$ are used, to sample a shower 28 times in the electromagnetic section. In 2018 a test beam experiment could demonstrate the large scale feasibility of this technology, by showing not only that the anticipated resolution can be reached, but also by demonstrating that a system the size of the ILD detector can be build and operated. 
+
+As an alternative to the Silicon based system, sensitive layers made from thin scintillator strips are also investigated. 
+
+For the hadronic part of the ILD detector, two technologies are studies: a Silicon photo diod (SiPM) on scintilator tile technology, and a version based on resistive plate chamber based readout. The SiPM- on - tile option works with moderate granularity, of about $3 \times 3$ cm$^2$ tiles, and provides an analogue readout of the signal in each tile (AHCAL). The RPC technology has a better granularity, of $1 \times 1$ cm$^2$, but provides only limited amplitude information, equivalent to 2 bits (SDHCAL). For both technologies significant prototypes have been built and operated. Both follow the engineering design anticipated for the final detector, and demonstrate thus not only the performance, but also the scalability of the technology to a large detector. Particular challenegs were the handling of the large number of channels, which requires the integration of a large part of the readout technolgy into the sensitive plane, and the operation of large area systems, incluing the handling of connected noise and timing issues. 
+
+It has been a major sucess in the past years that the technologies needed for a true particle flow calorimeter have been sucessfully demonstrated, in a design which is suitable for the ILD detector. With this demonstration a major hurdle towards the realisation of ILD has been surpassed. 
+
+
 
 \subsection{The Forward System}
+
+
 
 \subsection{The muon system}
 
@@ -220,6 +264,11 @@ Muon    & 2560   &        & 300-7755 & 12 scintillator layers&&\\
 \section{Integration of ILD into the ILC accelerator}
 
 \section{The ILD Collaboration}
+As described above the ILD collaboration started out as a fairly loosed organised group of scientists interested to explore the consequences the requirements imposed from the science at the ILC would make on a detector. With the delivery of the DBD in 2013 the group re-organised itself more along the lines of a traditional collaboration. The group gave itself a set of by-laws which goverened the function of hte group, and setup rules for the membership in ILD. Groups who wanted to be members of ILD needed to sign a memorandum of participation, a first step towards an eventual memorandum of understanding to contruct ILD, once the ILC has been approved. 
+
+In total 72 groups from XX coutries signed the letter of participation in 2015. In 2018 membership was reconfirmed 
+
+
 
 \section{Conclusion and Outlook}
 
