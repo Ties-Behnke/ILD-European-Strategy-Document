@@ -44,6 +44,11 @@
 \usepackage{graphicx}% Include figure files
 \usepackage{dcolumn}% Align table columns on decimal point
 \usepackage{bm}% bold math
+
+\renewcommand{\toprule}{\hline}
+\newcommand{\midrule}{\hline}
+\newcommand{\bottomrule}{\hline}
+
 %\usepackage{hyperref}% add hypertext capabilities
 %\usepackage[mathlines]{lineno}% Enable numbering of text and display math
 %\linenumbers\relax % Commence numbering lines
@@ -60,42 +65,43 @@
 
 \preprint{ILD}
 
+
 \title{The ILD detector at the ILC}% Force line breaks with \\
-\thanks{A footnote to the article title}%
+%\thanks{A footnote to the article title}%
 
 \author{The ILD Concept Group}
- \altaffiliation[Also at ]{Physics Department, XYZ University.}%Lines break automatically or can be forced with \\
+% \altaffiliation[Also at ]{Physics Department, XYZ University.}%Lines break automatically or can be forced with \\
 %\author{Second Author}%
 % \email{Second.Author@institution.edu}
-\affiliation{%
- Authors' institution and/or address\\
- This line break forced with \textbackslash\textbackslash
-}%
+%\affiliation{%
+% Authors' institution and/or address\\
+% This line break forced with \textbackslash\textbackslash
+%}%
 
-\collaboration{ILD Collaboration}%\noaffiliation
+%\collaboration{ILD Collaboration}%\noaffiliation
 
-\author{ILD author list}
- \homepage{http://www.ilcild.org}
-\affiliation{
- Second institution and/or address\\
- This line break forced% with \\
-}%
-\affiliation{
- Third institution, the second for Charlie Author
-}%
-\author{Delta Author}
-\affiliation{%
- Authors' institution and/or address\\
- This line break forced with \textbackslash\textbackslash
-}%
+%\author{ILD author list}
+% \homepage{http://www.ilcild.org}
+%\affiliation{
+% Second institution and/or address\\
+% This line break forced% with \\
+%}%
+%\affiliation{
+% Third institution, the second for Charlie Author
+%}%
+%\author{Delta Author}
+%\affiliation{%
+% Authors' institution and/or address\\
+% This line break forced with \textbackslash\textbackslash
+%}%
 
-\collaboration{ILD Collaboration}%\noaffiliation
+%\collaboration{ILD Collaboration}%\noaffiliation
 
 \date{\today}% It is always \today, today,
              %  but any date may be explicitly specified
 
 \begin{abstract}
-The international large detector, ILD, is a detector concept which has been developed for the electron positron collider ILC. The detector has been optimised for precision physics in a range of energies between 90 ~\GeV and 1~\TeV. ILD features a high precision, large volume combined silicon and gaseous tracking system, combined with a high granularity calorimeter all inside a solenoidal magnetic field. As a guiding principle in the design the concept of particle flow has been at the center of teh deliberations. In this document, the concept of the detector concept, the proposed implementation and the readiness of the different technologies needed for the implementation are discussed. The discussion takes place in the context of the ILC collider proposal, now under consideration in Japan, and includes site specific aspects needed to build and operate the detector at the proposed ILC site in Japan. 
+The international large detector, ILD, is a detector concept which has been developed for the electron positron collider ILC. The detector has been optimised for precision physics in a range of energies between 90 ~GeV and 1~TeV. ILD features a high precision, large volume combined silicon and gaseous tracking system, combined with a high granularity calorimeter all inside a solenoidal magnetic field. As a guiding principle in the design the concept of particle flow has been at the center of teh deliberations. In this document, the concept of the detector concept, the proposed implementation and the readiness of the different technologies needed for the implementation are discussed. The discussion takes place in the context of the ILC collider proposal, now under consideration in Japan, and includes site specific aspects needed to build and operate the detector at the proposed ILC site in Japan. 
 \begin{description}
 \item[PACS numbers]
 May be entered using the \verb+\pacs{#1}+ command.
@@ -106,9 +112,12 @@ May be entered using the \verb+\pacs{#1}+ command.
                              % Classification Scheme.
 %\keywords{Suggested keywords}%Use showkeys class option if keyword
                               %display desired
-\maketitle
 
+
+\maketitle
 \tableofcontents
+
+\newpage
 
 \section{\label{sec:level1}Introduction}
 
@@ -120,7 +129,7 @@ At about the same time particle flow as a novel concept to reconstruct complex e
 The ILD concept underwent a number of international review exercises, and was eventually validated as one of two ILC detector concept groups. With the delivery of the ILD technical design report in 2014, ILD re-organised its structure, to respond to the increasing likeliness that ILC as a project would be realised in Japan, and started a re-optimisation process to react to new technical developments, and to the quest for reducing the cost of the overall project. 
 
 \section{The ILD detector design: requirements}
-The science which will be done at the ILC has been summarised in a separate document \cite{ILC-ESU1}. It is strongly dominated by the quest for ultimate precision in measurements of the properties of key particles like the Higgs boson, the weak gauge bosons, and, once the center of mass energy is beyond the production threshold, the top quark. 
+The science which will be done at the ILC has been summarised in a separate document \cite{ILC-ESU1}. It is strongly dominated by the quest for ultimate precision in measurements of the properties of key particles like the Higgs boson, the weak gauge bosons, and, once the center of mass energy is beyond its production threshold, the top quark. 
 
 The anticipated precision physics program drives the requirements for the detector, essentially from two somewhat different assumptions. Many final states which will be analysed are fully hadronic final states, with a large number of jets. Thus an excellent reconstruction of jets is essentiell, which basically translates into an excellent jet energy resolution. Many studies for example looking at the reconstruction of W and Z bosons suggest that a jet energy resolution around 3\% is needed to fully exploit the power of the collider. Such a resolution requires an improvement of performance for example compared to the LHC detectors Atlas or CMS of nearly a factor of two. The concept of particle flow is currently believed to be the only approach which can reach this level of precision. Particle flow requires the reconstruction of charged and neutral particles with excellent efficiency, over a large solid angle, though at moderate individual resolution. Thus a tracker with outstanding efficiency is needed, combined with a calorimeter capabale of reconstruction neutral particles with high efficiency. For ILD the choice has been made to combine a large volume gaseous tracking system - which promises excellent efficiency combined with low mass - and a highly granular calorimeter both in the electromagnet and the hadronic section. To ease the linkage between the tracker and the calorimeter both tracker and calorimeter should be inside the coil. 
 
@@ -129,79 +138,48 @@ In contrast to this a number of highly relevant channels require the precise rec
 In a similar way the show-case reaction of the recoil HZ analysis requires high precision tracking, to be able to reconstruct the two-muon decay of the Z boson, against which the higgs recoils, with excellent precision. This adds excellent momentum reconstruction precision to the list of requirements. 
 
 The quantitative performance requirements which are used by the ILD collaboration in defining ILD are summarised in table~
-\ref{ild:tab:barrelpara}} and \ref{ild:tab:endcappara}.
+\ref{ild:tab:barrelpara} and \ref{ild:tab:endcappara}.
 
 The main parameters of the ILD detector are summarised in Table~\ref{ild:tab:barrelpara} and table~\ref{ild:tab:endcappara}.
-%\begin{sidewaystable}[thb]
-\begin{table}\hspace*{-0cm}\small
-%\begin{tabular}{|l|p{0.8cm}p{0.8cm}p{1.0cm}|p{2.5cm}p{3.0cm}p{3.0cm}|}
-%\begin{tabular}{|l|p{0.06\textwidth}p{0.06\textwidth}p{0.07\textwidth}|p{0.25\textwidth}p{0.20\textwidth}p{0.20\textwidth}|}
-\begin{tabular}{ l p{0.05\hsize}p{0.04\hsize}p{0.04\hsize} p{0.20\hsize}p{0.20\hsize}p{0.20\hsize} }
-%\hline
+
+\begin{table}\small
+\begin{center}
+    \begin{tabular}{|l|l|l|}
 \toprule
-\multicolumn{7}{l}{{\bf Barrel system}}\\
-%\hline
+Physical Quantity & critical system & required performance\\
 \midrule
-System & R(in) & R(out) & z & \multicolumn{3}{l}{comments}\\
-       & \multicolumn{3}{c}{[mm]}   &&&\\
-%\hline
+Decay length & Vertex & $ 5 \mu m \oplus 10 \mu m / p(GeV/c)sin^{3/2}\theta$ \\
 \midrule
-VTX    & 16         & 60        & 125 & 3 double layers &  Silicon pixel sensors, & \\
-       &            &           &           & layer 1: & layer 2: & layer 3-6 \\
-       &            &           &           & $\sigma<3 \mu m$ & $\sigma < 6 \mu m$ & $\sigma < 4 \mu m$ \\
-Silicon &           &           & &&&\\
-- SIT   & 153       & 300       & 644   & 2 silicon strip layers & $\sigma = 7 \mu m$& \\
-- SET   & 1811      &           & 2300   & 2 silicon strip layers & $\sigma = 7 \mu m$& \\
-- TPC   & 330       & 1808      & 2350   & MPGD readout & $1 \times 6 $mm$^2$ pads & $\sigma=60 \mu m$ at zero drift \\
-%\hline
+Momentum Resolution & Tracker & $2 \times 10^{-5} (GeV/c)^{-1}$ \\
 \midrule
-ECAL    & 1843      & 2028      & 2350   & W absorber  & SiECAL & 30 Silicon sensor layers, $5 \times 5$ mm$^2$ cells \\
-        &           &           &        &             & ScECAL & 30 Scintillator layers,  $ 5\times 45$ mm$^2$ strips \\
-HCAL    & 2058      & 3410      & 2350   & Fe absorber & AHCAL & 48 Scintillator layers, $3 \times 3$cm$^2$ cells, analogue \\
-        &           &           &         &            & SDHCAL & 48 Gas RPC layers, $1\times 1$ cm$^2$ cells, semi-digital\\
-%\hline
-\midrule
-Coil    & 3440      & 4400      & 3950    & 3.5 T field & $ 2 \lambda $& \\
-Muon    & 4450      & 7755      & 2800    & 14 scintillator layers& &\\
-%\hline
+Jet Energy & Calorimeter, Tracker & 3\% \\
 \bottomrule
 \end{tabular}
-\caption{\label{ild:tab:barrelpara}List of the main parameters of the ILD detector for the barrel part.}
+\end{center}
+\caption{Key detector performance parameters for the ILD detector}
+\label{ild:tab:barrelpara}
 \end{table}
 
-%\begin{table}\hspace*{-2.5cm}\small
-%\begin{tabular}{|l|p{0.8cm}p{0.8cm}p{1.0cm}|p{2.7cm}p{3.7cm}p{3.7cm}|}
-
-\begin{table}\hspace*{-0cm}\small
-%\begin{tabular}{|l|p{0.8cm}p{0.8cm}p{1.0cm}|p{2.5cm}p{3.0cm}p{3.0cm}|}
-\begin{tabular}{ l p{0.05\hsize}p{0.04\hsize}p{0.04\hsize} p{0.20\hsize}p{0.20\hsize}p{0.20\hsize} }
-
-%\hline
-\toprule
-\multicolumn{7}{ l }{{\bf End cap system}}\\
-\midrule
-System & z(min) & z(max) & r(min), r(max) & \multicolumn{3}{l}{comments}\\
-       & \multicolumn{3}{c}{[mm]}   &&&\\
-\midrule
-
-FTD    & 220     & 371    &      & 2 pixel disks & $\sigma=2-6 \mu m$ &\\
-       &         &        &      & 5 strip disks & $\sigma = 7 \mu m$& \\
-ETD    & 2420    & 2445   & 419-1822 & 2 silicon strip layers & $\sigma=7 \mu m$ & \\
-\midrule
-ECAL   & 2450    & 2635   &      & W-absorber & SiECAL & Si readout layers \\
-       &         &        &      &            & ScECAL & Scintillator layers \\
-HCAL   & 2650    & 3937   & 335-3190& Fe absorber & AHCAL & 48 Scintillator layers $3 \times 3 $cm$^2$ cells, analogue\\
-       &         &        &      &              & SDHCAL & 48 gas RPC layers $1\times 1$cm$^2$ cells, semi-digital \\
-BeamCal & 3595   & 3715   & 20-150  & W absorber& 30 GaAs readout layers & \\
-Lumical & 2500   & 2634   & 76-280 & W absorber & 30 Silicon layers & \\
-LHCAL   & 2680   & 3205   & 93-331 & W absorber &&\\
-\midrule
-Muon    & 2560   &        & 300-7755 & 12 scintillator layers&&\\
+\begin{table}[]
+    \centering
+    \begin{tabular}{l|c|c|l}
+        Detector & $R_{in}$ & $R_{out}$ & comment \\
+        \midrule
+        Vertex & 16 & 60 & 3 double layers of pixel detector \\
+        Silicon SIT & 153& 300 & 2 layers of SI strip detectors\\
+        TPC & 330 & 1808 & 220 points in TPC \\
+        Silicon SET & 1811& & 2 layers of SI strip detector \\
+        ECAL & 1843 & 2028 & Tungsten absorber, Si sensor, 30 layers, $5 \times 5 mm^2$ cells\\
+             &      &      & Scintillator strips, crossed, 5 mm wide, 30 layers\\
+        HCAL & 2058 & 3410 & RPC gas layers, $1 \times 1 cm^2 cells$, 48 layers\\
+             &      &      & SiPM on Sintillator layers, $3 \times 3 cm^2 cells$, 48 layers\\
+        Muon & 4450 & 7755 & SiPM on Scintillator strips, 14 layers \\
 \bottomrule
-\end{tabular}
-\caption{\label{ild:tab:endcappara}List of the main parameters of the ILD detector for the end cap part.}
-
+    \end{tabular}
+    \caption{Caption}
+    \label{tab:my_label}
 \end{table}
+
 
 In addition to the pure escience driven performance numbers the detector will have to be able to operate in the ILC environment. Due to the extreme focussing of the two beams in the interaction region, so-called beamstrahlung is generated, which produces significant background in the detector. The magnetic field focusses the majority of the charged component of the beamstrahlungs background into the forward region, but some fraction will still hit sensitive detector parts. This is particularly true for the innermost vertex detector layers, 
 
@@ -227,41 +205,53 @@ The anticipated performance of the vertex detector is shown in figure~\ref{fig-V
 
 \subsection{Tracking System}
 
-Tracking of charged particles is a key requirement for the ILD detector. ILD has decided to approach the problem with a hybrid solution, which combines a high resolution timeprojection chamber with a few layers of stretgically placed high resolution strip or pixel detectors. 
+Tracking of charged particles is a key requirement for the ILD detector. ILD has decided to approach the problem with a hybrid solution, which combines a high resolution timeprojection chamber with a few layers of strategically placed high resolution strip or pixel detectors. 
 
 The time projection chamber will fill a large volume of about 4.6\~m length and spanning radii from 33 to 180\~cm. In this volume the TPC provides in the barrel 220 three dimensional points, with a resolution of better than $100 \mu m$ in $r \phi$, and about 1 \~mm in z. This large number of points allows a reconstruction of the charged particle component of the event with large accuracy, including the reconstruction of secondaries, long lived particles, kinks etc.. In figure~\ref{fig:TPCeff} the simulated track finding efficiency in the TPC in high multiplicity $t \bar t$ events is shown. At the same time the complete TPC system will introduce only about 10\% of a radiation length into the detector. 
 
 On the inside and on the outside of the TPC a few layers of Silicon detector provide additional high resolution points, which, once combined with the TPC track, will result in a momentum resolution of $2 \times 10^{-5}$ for the complete system. Since the dead material in the system is very low, a significantly better resolution at low momenta can be achieved than it is possible with a Silicon only tracker. This is illustrated in figure~\ref{fig:momentumvsp}, where the ILD resolution is compared to the resolution in an ILD-like detector with Silicon only tracking, based on the optimization of the CLIC detector concept group. 
 
-The time projection chamber allows an identification of the particle type through the measurement of the specific energy loss, dE/dx, for tracks at intermediate momenta. The achievable resolution is shown in figure~\ref{fig:TPCdedx}. If the inner and/ or oute rsilicon layers can provide a timing of the particle at the level of 100 ps, the particle identification through dE/dx can be supplemented by time of flight measurements, which are particularly effective in the momentum regime which is the worst for dE/dx. This is shown by the second curve in figure~\fig{fig:TPCdedx}. 
+The time projection chamber allows an identification of the particle type through the measurement of the specific energy loss, dE/dx, for tracks at intermediate momenta. The achievable resolution is shown in figure~\ref{fig:TPCdedx}. If the inner and/ or outer silicon layers can provide a timing of the particle at the level of 100 ps, the particle identification through dE/dx can be supplemented by time of flight measurements, which are particularly effective in the momentum regime which is the worst for dE/dx. This is shown by the second curve in figure~\ref{fig:TPCdedx}. 
 
-The performance of the time projection chamber has been the subject of intense R\&D over the last 15 years. Several technologies for the readout of the TPC have been sucessfully developed, and have demonstrated the needed performance in test beam experiments. A large volume field cage has been built, tp demonstrate the low mass technology needed to meet the 10\% goal discussed above. Most recently the performance of the specific energy loss, dE/dx, has been validated in test beam data. Based on these results, the TPC technology is mature for use in the ILD detector, and can deliver the needed performance. 
+The performance of the time projection chamber has been the subject of intense R\&D over the last 15 years. Several technologies for the readout of the TPC have been successfully developed, and have demonstrated the needed performance in test beam experiments. A large volume field cage has been built, to demonstrate the low mass technology needed to meet the 10\% goal discussed above. Most recently the performance of the specific energy loss, dE/dx, has been validated in test beam data. Based on these results, the TPC technology is mature for use in the ILD detector, and can deliver the needed performance. 
 
 
 \subsection{Calorimeter System}
-At the core of each particle flow detector is a very powerful calorimeter system. Particle flow stresses the capabilities of separating the individual particles in a jet, both charged and neutral. This puts the imaging capabilities at a premium, and pushes the calorimeter development in the direction of very high granularity of the system. A particularly challenging part is the precise reconstruction of the neutral hadronic component in the shower. A highly granular sampling calorimeter for the hadronic part is the asnwer by ILD on this challenge. The technological and conceptual development of the particle flow calorimeter have been largely done by the CALICE collabortion. 
+At the core of each particle flow detector is a very powerful calorimeter system. Particle flow stresses the capabilities of separating the individual particles in a jet, both charged and neutral. This puts the imaging capabilities at a premium, and pushes the calorimeter development in the direction of very high granularity of the system. A particularly challenging part is the precise reconstruction of the neutral hadronic component in the shower. A highly granular sampling calorimeter for the hadronic part is the answer by ILD on this challenge. The technological and conceptual development of the particle flow calorimeter have been largely done by the CALICE collaboration. 
 
-ILD has chosen a smapling calorimeter readout with silicon diodes as one option for the electromagnetic calorimeter. Diodes with pads of about $5 \times 5$ mm$^2$ are used, to sample a shower 28 times in the electromagnetic section. In 2018 a test beam experiment could demonstrate the large scale feasibility of this technology, by showing not only that the anticipated resolution can be reached, but also by demonstrating that a system the size of the ILD detector can be build and operated. 
+ILD has chosen a sampling calorimeter readout with silicon diodes as one option for the electromagnetic calorimeter. Diodes with pads of about $5 \times 5$ mm$^2$ are used, to sample a shower 28 times in the electromagnetic section. In 2018 a test beam experiment could demonstrate the large scale feasibility of this technology, by showing not only that the anticipated resolution can be reached, but also by demonstrating that a system the size of the ILD detector can be build and operated. 
 
 As an alternative to the Silicon based system, sensitive layers made from thin scintillator strips are also investigated. 
 
-For the hadronic part of the ILD detector, two technologies are studies: a Silicon photo diod (SiPM) on scintilator tile technology, and a version based on resistive plate chamber based readout. The SiPM- on - tile option works with moderate granularity, of about $3 \times 3$ cm$^2$ tiles, and provides an analogue readout of the signal in each tile (AHCAL). The RPC technology has a better granularity, of $1 \times 1$ cm$^2$, but provides only limited amplitude information, equivalent to 2 bits (SDHCAL). For both technologies significant prototypes have been built and operated. Both follow the engineering design anticipated for the final detector, and demonstrate thus not only the performance, but also the scalability of the technology to a large detector. Particular challenegs were the handling of the large number of channels, which requires the integration of a large part of the readout technolgy into the sensitive plane, and the operation of large area systems, incluing the handling of connected noise and timing issues. 
+For the hadronic part of the ILD detector, two technologies are studies: a Silicon photo diode (SiPM) on scintillator tile technology, and a version based on resistive plate chamber based readout. The SiPM- on - tile option works with moderate granularity, of about $3 \times 3$ cm$^2$ tiles, and provides an analogue readout of the signal in each tile (AHCAL). The RPC technology has a better granularity, of $1 \times 1$ cm$^2$, but provides only limited amplitude information, equivalent to 2 bits (SDHCAL). For both technologies significant prototypes have been built and operated. Both follow the engineering design anticipated for the final detector, and demonstrate thus not only the performance, but also the scalability of the technology to a large detector. Particular challenges were the handling of the large number of channels, which requires the integration of a large part of the readout technology into the sensitive plane, and the operation of large area systems, including the handling of connected noise and timing issues. 
 
-It has been a major sucess in the past years that the technologies needed for a true particle flow calorimeter have been sucessfully demonstrated, in a design which is suitable for the ILD detector. With this demonstration a major hurdle towards the realisation of ILD has been surpassed. 
-
-
+It has been a major success in the past years that the technologies needed for a true particle flow calorimeter have been successfully demonstrated, in a design which is suitable for the ILD detector. With this demonstration a major hurdle towards the realization of ILD has been surpassed. 
 
 \subsection{The Forward System}
-
-
+Three rather specific calorimeter systems are foreseen for the very forward region of the ILD detector. The LHCAL extends the reach of the endcap hadronic calorimeter system downwards towards smaller angels relative to the beam, and closes the gap between the octogonal geometry of the HCAL endcap and the round geometry of the luminosity calorimeter, Lumical. Lumical, a high precision fine sampling Silicon tungsten calorimeter is primarily designed to measure electrons from Bhabha scattering, to determine precisely the luminosity. Below the Lumkical acceptance, where background from beamstrahlung rises sharply, beamcal places further downstream from the interaction point, provides further coverage. As the systems move close to the beampipe, the requirements on radiation hardness and on speed become more and more challenging. Indeed this very forward region in ILD is the only region where radiation hardness of the systems is a key requirement. In placing the different detector components, particular care has been taken to allow the bulk of the beamstrahlungs photons and pairs to leave the detector through the outgoing beampipe hole. In particular the beamcal has been positioned in such a way that backscattering of particles from the beamcal face into the active part of the detector is minimised. 
+In a seri
 
 \subsection{The muon system}
 
 \subsection{Detector Integration}
+One of the major goals of the ILD collaboration was from the beginning to push the detector concept from a collection of technological ideas to a real detector that can actually be built, commissioned, and operated within given engineering and site dependent constraints. The effort, driven by dedicated working groups, resulted in an engineering model of ILD that describes the mechanical setup of the detector structures themselves as well as the detector services as cabling, cooling, gas systems, and cryogenics. The technical description of ILD is based on Interface Control Documents and is documented on the ILC-EDMS system with a web-based front-end~\cite{EDMS}. A detailed CAD model of ILD exists and can be accessed a the same location.
+
+The main mechanical structure of the ILD detector is the iron yoke that consists of three barrel rings and two endcaps. The yoke provides the required shielding for radiation and magnetic fields to allow access to the outside of the detector during data taking. The central yoke ring carries the cryostat for the detector soleniod and the barrel detectors, calorimeters and tracking system. The yoke endcaps carry the endcap detectors and can be opened to allow for access to the inner detector. The mechanical concept of ILD can be seen in figure~\ref{fig:ILD_mechanical}. The mechanical concept of ILD has been designed and tested in simulations for seismic conditions that can be expected at the foreseen ILC site in northern Japan.
+
+A common concept for the detector services as cables, cooling, gases and cryogenics has been designed. The requirements are in many cases based on engineering prototypes of the ILD sub-systems. 
+
+The main detector solenoid is based on the CMS experience and can deliver magnetic fields up to 4T. A correction system for the compensation of the crossing angle of the ILC beam, the Detector Integrated Dipole, has been designed and can be integrated into the main magnet cryostat.
 
 \section{Science with ILD}
 
-\section{Integration of ILD into the ILC accelerator}
+\section{Integration of ILD into the experimental environment}
+ILD is designed to work in a push-pull system with another detector at a common ILC interaction region. In this scheme, ILD sits on a movable platform in the underground experimental hall. This platforms allows for a roll-in of ILD from the parking position into the beam and vice versa within a few hours. The detector can be fully opened and maintained in the parking position.
+
+The current mechanical design of ILD assumes an initial assembly of the detector on the surface, similar as it has been done for CMS at LHC. A vertical shaft from the surface into the underground experimental cavern allows for a lowering of ILD in basically five segments, given by the five yoke rings.
+
+ILD is designed to fully cope with the ILD beam conditions. The expected levels of beam induced backgrounds have been simulated and are seen to be on tolerable levels, e.g. for the vertex detectors. Careful shielding keep scattered backgrounds under control. Machinewise, the design of the interaction region and the collimation system has been done to keep the external background sources at levels below the detector requirements.
+
+ILD is self-shielding with respect to radiation and magnetic fields so that operation of surrounding equipment, e.g. for cryogenics, and maintenance outside of the detector is possible. Of paramount importance is the possibility to operate and maintain the second ILC push-pull detector in the underground cavern.
 
 \section{The ILD Collaboration}
 As described above the ILD collaboration started out as a fairly loosed organised group of scientists interested to explore the consequences the requirements imposed from the science at the ILC would make on a detector. With the delivery of the DBD in 2013 the group re-organised itself more along the lines of a traditional collaboration. The group gave itself a set of by-laws which goverened the function of hte group, and setup rules for the membership in ILD. Groups who wanted to be members of ILD needed to sign a memorandum of participation, a first step towards an eventual memorandum of understanding to contruct ILD, once the ILC has been approved. 
@@ -272,7 +262,10 @@ In total 72 groups from XX coutries signed the letter of participation in 2015. 
 
 \section{Conclusion and Outlook}
 
+\begin{thebibliography}{}
+\bibitem{EDMS} ILD Technical Documentation, http://edmsdirect.desy.de/ildtdr
 
+\end{thebibliography}
 \end{document}
 %
 % ****** End of file apssamp.tex ******
